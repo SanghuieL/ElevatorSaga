@@ -16,6 +16,7 @@
                     }
                 }
             });
+        //whenever a button is pressed in the elevator
             elevators[i].on("floor_button_pressed", function(floorNum) { 
                 if (this.loadFactor() === 0) {
                     this.GoToFloor(0);
@@ -28,6 +29,7 @@
                     }
                 }    
             } );
+        //when passing a foor
             elevators[i].on("passing_floor", function(floorNum, direction) { 
                 if(this.getPressedFloors().includes(floorNum)){
                     this.goToFloor(floorNum);
